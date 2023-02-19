@@ -31,13 +31,17 @@ const TaskCreator = () =>
 			<form onSubmit = {(e) => onSaveClick(e)}>
 				<div>
 					<label>Nazwa</label>
-					<input onChange = {(e) => onNameChange(e)}></input>
+					<input required value = {name} onChange = {(e) => onNameChange(e)}></input>
 				</div>
+
+				{name.length === 0 && <span className = "requiredFieldText">To pole jest wymagane!</span>}
 
 				<div>
 					<label>Opis</label>
-					<input onChange = {(e) => onDescriptionChange(e)}></input>
+					<input required value = {description} onChange = {(e) => onDescriptionChange(e)}></input>
 				</div>
+
+				{description.length === 0 && <span className = "requiredFieldText">To pole jest wymagane!</span>}
 
 				<div>
 					<button type = "submit">
