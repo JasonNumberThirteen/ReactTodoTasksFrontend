@@ -64,3 +64,5 @@ const TaskEditor = () =>
 		</div>
 	);
 };
+
+export default TaskEditor;
