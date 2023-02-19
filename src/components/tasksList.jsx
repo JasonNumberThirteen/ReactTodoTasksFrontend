@@ -5,6 +5,14 @@ const TasksList = () =>
 {
 	const [tasksData, changedTasksData] = useState(null);
 	const un = useNavigate();
+
+	useEffect(() =>
+	{
+		fetch("http://localhost:8080/api/tasks")
+		.then((response) => response.json())
+		.then((response) => changedTasksData(response))
+		.catch((error) => console.log(error.message));
+	}, []);
 	
 	return (
 		<div>
