@@ -19,7 +19,7 @@ const CompletedTasksList = () =>
 	
 	return (
 		<div>
-			<h2>Lista zadań</h2>
+			<h2>Lista ukończonych zadań</h2>
 			<table className = "tasksList">
 				<thead className = "tasksListHead">
 					<tr>
