@@ -5,6 +5,9 @@ const TasksList = () =>
 {
 	const [tasksData, changedTasksData] = useState(null);
 	const un = useNavigate();
+	const onEditTaskClick = (id) => un("/task/edit/" + id);
+	const onDisplayCompletedTasks = () => un("/tasks/completed");
+	const onCreateTaskClick = () => un("/task/create");
 
 	useEffect(() =>
 	{
@@ -35,7 +38,7 @@ const TasksList = () =>
 							<td>{task.description}</td>
 							<td>{task.completed ? "UKOŃCZONE" : "Nieukończone"}</td>
 							<td>
-								<a>
+								<a onClick = {() => onEditTaskClick(task.id)}>
 									EDYTUJ
 								</a>
 							</td>
@@ -43,10 +46,10 @@ const TasksList = () =>
 					)}
 				</tbody>
 			</table>
-			<button>
+			<button onClick = {() => onDisplayCompletedTasks()}>
 				Wyświetl tylko ukończone zadania
 			</button>
-			<button>
+			<button onClick = {() => onCreateTaskClick()}>
 				Dodaj nowe zadanie
 			</button>
 		</div>
