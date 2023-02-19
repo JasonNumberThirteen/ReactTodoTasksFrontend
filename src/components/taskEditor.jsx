@@ -26,6 +26,17 @@ const TaskEditor = () =>
 		}).then(() => un("/"))
 		.catch((error) => console.log(error.message));
 	};
+	const onRemoveClick = () =>
+	{
+		if(window.confirm("Czy na pewno chcesz usunąć to zadanie?"))
+		{
+			fetch("http://localhost:8080/api/tasks/" + taskid,
+			{
+				method: "DELETE"
+			}).then(() => un("/"))
+			.catch((error) => console.log(error.message));
+		}
+	};
 	const onBackClick = () => un("/");
 
 	useEffect(() =>
@@ -75,6 +86,10 @@ const TaskEditor = () =>
 					</button>
 				</div>
 			</form>
+
+			<button onClick = {() => onRemoveClick()}>
+				Usuń zadanie
+			</button>
 		</div>
 	);
 };
