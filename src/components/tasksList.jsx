@@ -36,7 +36,7 @@ const TasksList = () =>
 							<td>{task.id}</td>
 							<td>{task.name}</td>
 							<td>{task.description}</td>
-							<td>{task.completed ? "UKOŃCZONE" : "Nieukończone"}</td>
+							<td className = {task.completed ? "completedTaskTableCell" : "notCompletedTaskTableCell"}>{task.completed ? "UKOŃCZONE" : "Nieukończone"}</td>
 							<td>
 								<a onClick = {() => onEditTaskClick(task.id)}>
 									EDYTUJ
