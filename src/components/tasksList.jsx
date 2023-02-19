@@ -9,3 +9,5 @@ const TasksList = () =>
 		</div>
 	);
 };
+
+export default TasksList;
