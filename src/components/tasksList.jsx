@@ -3,6 +3,9 @@ import {Link, useNavigate} from "react-router-dom";
 
 const TasksList = () =>
 {
+	const [tasksData, changedTasksData] = useState(null);
+	const un = useNavigate();
+	
 	return (
 		<div>
 			<h2>Lista zadań</h2>
@@ -17,7 +20,19 @@ const TasksList = () =>
 					</tr>
 				</thead>
 				<tbody>
-
+					{tasksData && tasksData.map((task) =>
+						<tr key = {task.id}>
+							<td>{task.id}</td>
+							<td>{task.name}</td>
+							<td>{task.description}</td>
+							<td>{task.completed ? "UKOŃCZONE" : "Nieukończone"}</td>
+							<td>
+								<a>
+									EDYTUJ
+								</a>
+							</td>
+						</tr>
+					)}
 				</tbody>
 			</table>
 			<button>
