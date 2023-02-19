@@ -6,7 +6,7 @@ const CompletedTasksList = () =>
 	const [tasksData, changedTasksData] = useState(null);
 	const un = useNavigate();
 	const onEditTaskClick = (id) => un("/task/edit/" + id);
-	const onDisplayAllTasks = () => un("/tasks");
+	const onDisplayAllTasks = () => un("/");
 	const onCreateTaskClick = () => un("/task/create");
 
 	useEffect(() =>
