@@ -11,7 +11,7 @@ const TaskEditor = () =>
 	const un = useNavigate();
 	const onNameChange = (e) => changedName(e.target.value);
 	const onDescriptionChange = (e) => changedDescription(e.target.value);
-	const onCompletedChange = (e) => changedCompleted(e.target.value);
+	const onCompletedChange = (e) => changedCompleted(e.target.checked);
 	const onSaveClick = (e) =>
 	{
 		e.preventDefault();
@@ -27,6 +27,20 @@ const TaskEditor = () =>
 		.catch((error) => console.log(error.message));
 	};
 	const onBackClick = () => un("/");
+
+	useEffect(() =>
+	{
+		fetch("http://localhost:8080/api/tasks/" + taskid)
+		.then((response) => response.json())
+		.then((response) =>
+		{
+			changedId(response.id);
+			changedName(response.name);
+			changedDescription(response.description);
+			changedCompleted(response.completed);
+		})
+		.catch((error) => console.log(error.message));
+	}, []);
 	
 	return (
 		<div>
