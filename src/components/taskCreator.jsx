@@ -1,22 +1,19 @@
 import {useEffect, useState} from "react";
 import {Link, useNavigate, useParams} from "react-router-dom";
 
-const TaskCreator = () =>
-{
+const TaskCreator = () => {
 	const [name, changedName] = useState("");
 	const [description, changedDescription] = useState("");
 	const un = useNavigate();
 	const onNameChange = (e) => changedName(e.target.value);
 	const onDescriptionChange = (e) => changedDescription(e.target.value);
-	const onSaveClick = (e) =>
-	{
+	const onSaveClick = (e) => {
 		e.preventDefault();
 
 		const completed = false;
 		const data = {name, description, completed};
 
-		fetch("http://localhost:8080/api/tasks",
-		{
+		fetch("http://localhost:8080/api/tasks", {
 			method: "POST",
 			headers: {"content-type": "application/json"},
 			body: JSON.stringify(data)

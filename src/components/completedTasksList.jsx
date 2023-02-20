@@ -1,16 +1,14 @@
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 
-const CompletedTasksList = () =>
-{
+const CompletedTasksList = () => {
 	const [tasksData, changedTasksData] = useState(null);
 	const un = useNavigate();
 	const onEditTaskClick = (id) => un("/task/edit/" + id);
 	const onDisplayAllTasks = () => un("/");
 	const onCreateTaskClick = () => un("/task/create");
 
-	useEffect(() =>
-	{
+	useEffect(() => {
 		fetch("http://localhost:8080/api/tasks/completed")
 		.then((response) => response.json())
 		.then((response) => changedTasksData(response))

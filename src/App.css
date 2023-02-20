@@ -1,24 +1,19 @@
-.App
-{
+.App {
 	text-align: center;
 }
 
-.App-logo
-{
+.App-logo {
 	height: 40vmin;
 	pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference)
-{
-	.App-logo
-	{
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
 		animation: App-logo-spin infinite 20s linear;
 	}
 }
 
-.App-header
-{
+.App-header {
 	background-color: #282c34;
 	min-height: 100vh;
 	display: flex;
@@ -29,13 +24,11 @@
 	color: white;
 }
 
-.App-link
-{
+.App-link {
 	color: #61dafb;
 }
 
-@keyframes App-logo-spin
-{
+@keyframes App-logo-spin {
 	from
 	{
 		transform: rotate(0deg);
@@ -46,80 +39,66 @@
 	}
 }
 
-.btn
-{
+.btn {
 	margin: 4px;
 }
 
-.tasksList
-{
+.tasksList {
 	border: 2px solid;
 	border-radius: 4px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.tasksListHead
-{
+.tasksListHead {
 	font-weight: bold;
 	background-color: antiquewhite;
 }
 
-.editTaskAnchor
-{
+.editTaskAnchor {
 	color: black;
 }
 
-.editTaskAnchor:hover
-{
+.editTaskAnchor:hover {
 	color: red;
 }
 
-.requiredFieldText
-{
+.requiredFieldText {
 	color: red;
 	font-weight: bold;
 }
 
-.completedTaskTableCell
-{
+.completedTaskTableCell {
 	background-color: greenyellow;
 }
 
-.notCompletedTaskTableCell
-{
+.notCompletedTaskTableCell {
 	background-color: orangered;
 }
 
-button
-{
+button {
 	margin: 4px;
 }
 
-h1
-{
+h1 {
 	text-shadow: 0 0 4px #FF0000;
 }
 
-td
-{
+td {
 	border: 1px solid;
 	border-radius: 2px;
 	text-align: center;
 	padding: 4px;
 }
 
-label
-{
+label {
 	padding: 4px;
 }
 
-input
-{
+input {
 	padding: 4px;
 }
 
-div
-{
+div {
 	padding: 4px;
 }

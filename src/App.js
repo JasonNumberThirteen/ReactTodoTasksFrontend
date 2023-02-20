@@ -6,8 +6,7 @@ import CompletedTasksList from "./components/completedTasksList.jsx"
 import TaskCreator from "./components/taskCreator.jsx"
 import TaskEditor from "./components/taskEditor.jsx"
 
-function App()
-{
+function App() {
 	return (
 		<div className="App">
 			<h1>ZADANIA DO WYKONANIA</h1>

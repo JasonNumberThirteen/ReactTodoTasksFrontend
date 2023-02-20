@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-const TaskEditor = () =>
-{
+const TaskEditor = () => {
 	const {taskid} = useParams();
 	const [id, changedId] = useState("");
 	const [name, changedName] = useState("");
@@ -12,26 +11,21 @@ const TaskEditor = () =>
 	const onNameChange = (e) => changedName(e.target.value);
 	const onDescriptionChange = (e) => changedDescription(e.target.value);
 	const onCompletedChange = (e) => changedCompleted(e.target.checked);
-	const onSaveClick = (e) =>
-	{
+	const onSaveClick = (e) => {
 		e.preventDefault();
 
 		const data = {id, name, description, completed};
 
-		fetch("http://localhost:8080/api/tasks/" + taskid,
-		{
+		fetch("http://localhost:8080/api/tasks/" + taskid, {
 			method: "PUT",
 			headers: {"content-type": "application/json"},
 			body: JSON.stringify(data)
 		}).then(() => un("/"))
 		.catch((error) => console.log(error.message));
 	};
-	const onRemoveClick = () =>
-	{
-		if(window.confirm("Czy na pewno chcesz usunąć to zadanie?"))
-		{
-			fetch("http://localhost:8080/api/tasks/" + taskid,
-			{
+	const onRemoveClick = () => {
+		if(window.confirm("Czy na pewno chcesz usunąć to zadanie?")) {
+			fetch("http://localhost:8080/api/tasks/" + taskid, {
 				method: "DELETE"
 			}).then(() => un("/"))
 			.catch((error) => console.log(error.message));
@@ -39,12 +33,10 @@ const TaskEditor = () =>
 	};
 	const onBackClick = () => un("/");
 
-	useEffect(() =>
-	{
+	useEffect(() => {
 		fetch("http://localhost:8080/api/tasks/" + taskid)
 		.then((response) => response.json())
-		.then((response) =>
-		{
+		.then((response) => {
 			changedId(response.id);
 			changedName(response.name);
 			changedDescription(response.description);

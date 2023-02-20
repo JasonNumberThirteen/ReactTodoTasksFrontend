@@ -9,8 +9,7 @@ const TasksList = () =>
 	const onDisplayCompletedTasks = () => un("/tasks/completed");
 	const onCreateTaskClick = () => un("/task/create");
 
-	useEffect(() =>
-	{
+	useEffect(() => {
 		fetch("http://localhost:8080/api/tasks")
 		.then((response) => response.json())
 		.then((response) => changedTasksData(response))
